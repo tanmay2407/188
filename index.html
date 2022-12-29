@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bow shooter</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+     <script src="shoot.js"></script> -->
+    
+</head>
+<body>
+   <a-scene>
+    <a-assert>
+        <a-assert-item id="bowimage" gltf_module="./bow_module/scene.gltf"></a-assert-item>
+        <audio></audio>
+    </a-assert>
+    
+     <a-sky id="blue" color="black" ></a-sky>
+     <a-entity id="target_1">
+      <a-circle radius="1" color="green" position="0 3 0"></a-circle>
+   </a-entity>
+     <a-entity id="target_2">
+        <a-circle radius="0.6" position="0 3 0" color="blue"></a-circle>
+     </a-entity>
+     <a-entity id="target_3">
+        <a-circle radius="0.3" position="0 3 0" color="red"></a-circle>
+     </a-entity>
+    
+ <a-entity id="camera" camera position="0 0 10" look-controls="pointerLockEnabled: false">
+    <a-entity id="weapon" gltf-model="#shooter" 
+      position="0 -4.4 3" rotation="0 180 0" scale="0.35 1 1"
+      body="type: static; mass: 5; shape: none;" 
+      shape="shape: sphere; radius: 5; offset: 0 3 0;"
+      player-movement>
+    </a-entity>
+    <a-cursor></a-cursor>
+    
+ <!-- <a-entity id="bow" src=".bowimage" ></a-entity> -->
+ <a-entity id="bullet" shoot></a-entity>
+  <a-entity id="chanses" text="value:chanses-3:color:white" position="0 300 0" >
+   <!-- <a-entity id="test" position="0 0 5"
+                text="color: white; align: center; value:test; width: 1.5">
+      </a-entity> -->
+   <a-entity id="title" text="color:white;align:center;value:welcome to bow shotting game (xd) width:3" position="0 340 0" color="white"></a-entity>
+    <a-entity id="subtitle" text="color:white;align:left; value:enjoy the exprence of bow shooting game" position="0 200 0"></a-entity>
+    <a-entity id="time" text="color:white;align:center;value:time:2 min  " position=" -20 200 0"></a-entity>
+    <a-entity id="arrow_left" text="color:white;align:center;value:arrow:3  " position=" -20 200 0"></a-entity>
+    
+  </a-entity> 
+</a-scene>
+</body>
+</html>
